@@ -58,20 +58,34 @@ $ pm2 generate                  # Generate a sample json configuration 
 ```
 ### pm2基础配置介绍
 ```
-// pm2.config.js 基础配置介绍
+// pm2.config.json 基础配置介绍
+
 {
+
   "apps": {
+
     "name": "blog-koa2", // 名称
+
     "script": "bin/www", // 启动地址
+
     "watch": true, // 代码变动是否重启
+
     "ignore_watch": [ // 代码变动忽略文件
+
       "node_modules",
+
       "logs"
+
     ],
     "instances": 4, // 启动进程数
+
     "error_file": "logs/error.log", // 错误日志文件
+
     "out_file": "logs/out.log", // 输出日志文件
+
     "log_date_format": "YYYY-MM-DD HH:mm:ss" // 日志添加日期格式
+
   }
+
 }
 ```
